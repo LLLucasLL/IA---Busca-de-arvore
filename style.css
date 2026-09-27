@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+body {
+    background: #0f0f13;
+    color: #e2e8f0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Painel Lateral estilo Inventário / Menu RPG */
+.menu {
+    width: 420px;
+    background: #181824;
+    border-right: 4px solid #3b2f2f;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: #f1f5f9;
+    box-shadow: 5px 0 20px rgba(0,0,0,0.6);
+    z-index: 10;
+}
+
+.menu h2 {
+    color: #f59e0b;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    border-bottom: 2px solid #3b2f2f;
+    padding-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.menu label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.menu input,
+.menu select {
+    height: 42px;
+    border: 2px solid #334155;
+    border-radius: 6px;
+    padding-left: 12px;
+    font-size: 14px;
+    outline: none;
+    background: #0f172a;
+    color: #f8fafc;
+    transition: 0.3s;
+}
+
+.menu input:focus,
+.menu select:focus {
+    border-color: #f59e0b;
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+}
+
+.posicionamento {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+/* Botões estilo Aventura / RPG */
+button {
+    height: 45px;
+    border: 2px solid #b45309;
+    background: linear-gradient(to bottom, #f59e0b, #d97706);
+    color: #1e1b4b;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.2s;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(to bottom, #fbbf24, #f59e0b);
+    box-shadow: 0 6px 12px rgba(245, 158, 11, 0.4);
+}
+
+#limpar {
+    background: linear-gradient(to bottom, #475569, #334155);
+    border-color: #64748b;
+    color: #f8fafc;
+    text-shadow: none;
+}
+
+#limpar:hover {
+    background: linear-gradient(to bottom, #64748b, #475569);
+}
+
+/* Caixa de Resultados Estilo Pergaminho / Console */
+.resultado {
+    margin-top: 10px;
+    background: #0f172a;
+    border: 2px solid #334155;
+    border-radius: 8px;
+    padding: 15px;
+    color: #cbd5e1;
+    overflow-y: auto;
+    flex-grow: 1;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.resultado h3 {
+    color: #f59e0b;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+/* Área do Mapa Estilo Dungeon / Cenário 2D */
+.areaMapa {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #1e1b4b 0%, #09090b 100%);
+    overflow: auto;
+}
+
+.grid {
+    display: grid;
+    gap: 6px;
+    padding: 25px;
+    background: rgba(15, 23, 42, 0.85);
+    border: 4px solid #3b2f2f;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.8), inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Células estilo Piso de Masmorra */
+.celula {
+    width: 70px;
+    height: 70px;
+    background: #27272a;
+    border: 2px solid #3f3f46;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 2px 4px rgba(255,255,255,0.05);
+}
+
+.celula:hover {
+    border-color: #a1a1aa;
+    background: #3f3f46;
+}
+
+/* Obstáculos: Paredes / Rochas da Masmorra */
+.obstaculo {
+    background: #18181b !important;
+    border: 2px solid #09090b !important;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.9);
+}
+
+/* Origem: Cavaleiro (Carrega 'cavaleiro.png') */
+.origem {
+    background-color: #065f46 !important;
+    background-image: url('cavaleiro.png');
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid #10b981 !important;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.8), inset 0 0 10px rgba(255,255,255,0.3);
+    animation: pulsar-rpg 1.5s infinite alternate;
+}
+
+/* Destino: Monstro (Carrega 'monstro.png') */
+.destino {
+    background-color: #991b1b !important;
+    background-image: url('monstro.png');
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid #ef4444 !important;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.8), inset 0 0 10px rgba(255,255,255,0.3);
+    animation: pulsar-rpg 1.5s infinite alternate;
+}
+
+/* Caminho: Rota Mágica / Trilha Dourada */
+.caminho {
+    background-color: #fbbf24 !important;
+    border: 2px solid #f59e0b !important;
+    box-shadow: 0 0 12px rgba(251, 191, 36, 0.8);
+    animation: brilho-caminho 0.4s;
+}
+
+@keyframes pulsar-rpg {
+    from { transform: scale(1); filter: brightness(1); }
+    to { transform: scale(1.06); filter: brightness(1.2); }
+}
+
+@keyframes brilho-caminho {
+    0% { transform: scale(0.3); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.hidden {
+    display: none !important;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Busca em Grid</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <aside class="menu">
+
+        <h2>Busca em Grid</h2>
+
+        <label>Mapa</label>
+
+        <select id="mapa">
+            <option>Mapa 0</option>
+            <option>Mapa 1</option>
+            <option>Mapa 2</option>
+            <option>Mapa 3</option>
+        </select>
+
+        <div class="posicionamento">
+
+        <label>Origem</label>
+        <input type="text" id="origem" placeholder="Ex: 2,3">
+
+        <label>Destino</label>
+        <input type="text" id="destino" placeholder="Ex: 5,4">
+
+        </div>
+
+        <label>Método</label>
+
+        <select id="metodo">
+            <option>Amplitude / Busca em Largura</option>
+            <option>Profundidade / Busca em Profundidade</option>
+            <option>Profundidade Limitada</option>
+            <option>Aprofundamento Iterativo</option>
+            <option>Bidirecional</option>
+            <option>Custo Uniforme</option>
+            <option>Greedy</option>
+            <option>A* (A-Estrela)</option>
+            <option>AIA* (A-Estrela Limitada)</option>
+        </select>
+
+        <label id="label-limite" class="hidden">Limite</label>
+        <input type="number" id="limite" class="hidden" placeholder="Ex: 10" min="1">
+
+        <div class="posicionamento">
+
+        <button id="executar">
+            EXECUTAR
+        </button>
+
+        <button id="limpar" type="button">
+            LIMPAR
+        </button>
+
+        </div>
+
+        <div class="resultado">
+
+            <h3>Resultado</h3>
+
+            <p id="textoResultado">
+                Aguardando execução...
+            </p>
+
+        </div>
+
+    </aside>
+
+    <main class="areaMapa">
+
+        <div class="grid" id="grid"></div>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
